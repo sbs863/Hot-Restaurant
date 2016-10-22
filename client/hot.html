@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src ="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script type="text/javascript">
+var	socket = io();
+
+var guest = {id: 3, name: "mike", phone:"773.444.5555",email: "n@gmail"};
+
+function testButton()
+{
+  socket.emit('buttonListner',guest);
+  
+}
+socket.on('test', function(data)
+{
+	console.log("from the app.js " + data.mess);
+});
+</script>
+</head>
+
+
+<body>
+<button onclick="testButton()">test</button>
+</body>
+</html>
+
